@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "sass --style=compressed src/scss/style.scss src/css/style.css"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "sass": "^1.51.0",
+    "stylelint": "^14.8.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "surge": "^0.23.1"
+  }
+}
