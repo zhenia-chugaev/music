@@ -1,1 +1,5 @@
-// Стили для определения сетки страницы.
+@mixin sticky-footer() {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}

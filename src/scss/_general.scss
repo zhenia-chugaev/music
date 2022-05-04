@@ -1,1 +1,46 @@
-// Общие стили проекта.
+@use "lib";
+@use "layout";
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  @include layout.sticky-footer;
+
+  @include lib.font-base(400, 16px, 1.5) {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: lib.$base-light;
+  }
+
+  background-color: lib.$base-dark;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  font-size: 1px;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
+}
