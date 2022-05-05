@@ -40,7 +40,177 @@ img {
   clip: rect(0, 0, 0, 0);
 }
 
+.page {
+  &__section {
+    padding-top: 100px;
+  }
+}
+
 .container {
   width: 100%;
   padding: 0 20px;
+}
+
+/* Заголовки */
+
+.heading {
+  margin: 0;
+
+  @include lib.font-base(700, 18px, 1.5) {
+    color: lib.$base-light;
+
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+  }
+
+  &_size_large {
+    font-size: 30px;
+  }
+
+  &_size_small {
+    font-size: 16px;
+  }
+
+  &_weight_regular {
+    font-weight: 400;
+  }
+
+  &_capitalized {
+    text-transform: capitalize;
+  }
+}
+
+.title {
+  margin: 0;
+
+  @include lib.font-base(700, 18px, 1.5) {
+    color: lib.$base-light;
+    text-transform: capitalize;
+  }
+
+  &_size_small {
+    font-size: 12.8px;
+  }
+
+  &_uppercase {
+    text-transform: uppercase;
+  }
+}
+
+/* Текстовый контент */
+
+.text {
+  margin: 0;
+
+  &_color_white {
+    color: lib.$base-light;
+  }
+
+  &_color_gray {
+    color: lib.$gray-medium;
+  }
+}
+
+/* Кнопки, ссылки */
+
+.button,
+.link {
+  $primary-color: lib.$base-light;
+
+  display: inline-block;
+  padding: 20px 30px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+
+  @include lib.font-base(400, 13px, 1.5) {
+    @include lib.link-reset($primary-color);
+
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: lib.base-x(2);
+    vertical-align: middle;
+    fill: $primary-color;
+  }
+
+  &_bg_green {
+    background-color: lib.$green;
+  }
+
+  &_bg_brown {
+    background-color: lib.$brown;
+  }
+
+  &_bg_blue {
+    background-color: lib.$blue;
+  }
+
+  &_bg_none {
+    border: 1px solid $primary-color;
+    background-color: transparent;
+  }
+
+  &_theme_shaded {
+    color: lib.$gray-medium;
+    border-color: lib.$gray-medium;
+  }
+
+  &_text_left {
+    text-align: left;
+  }
+
+  &_transform_none {
+    text-transform: none;
+  }
+
+  &_rounded {
+    border-radius: 32px;
+  }
+}
+
+/* Поля ввода */
+
+.generic-input {
+  display: inline-block;
+  height: 50px;
+  padding: 0 20px;
+  border: 2px solid lib.$gray-medium;
+  border-radius: 3px;
+  background-color: transparent;
+
+  @include lib.font-base(700, 14px, 16px) {
+    color: lib.$base-light;
+  }
+
+  &::placeholder {
+    color: lib.$base-light;
+  }
+}
+
+.search-input {
+  display: inline-block;
+  height: 25px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 50px;
+  background-color: lib.$gray-dark;
+
+  @include lib.font-base(400, 13px, 15px) {
+    color: lib.$gray-medium;
+    text-transform: uppercase;
+  }
+
+  &::placeholder {
+    color: lib.$text-dark;
+  }
 }

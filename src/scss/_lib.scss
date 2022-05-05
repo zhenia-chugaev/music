@@ -18,3 +18,8 @@ $brown: #95390c;
   line-height: $interline;
   @content;
 }
+
+@mixin link-reset($color: inherit) {
+  color: $color;
+  text-decoration: none;
+}
