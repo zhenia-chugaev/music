@@ -43,24 +43,26 @@
   </header>
 
   <main>
-    <h1>Музыкальный портал "Music Box"</h1>
+    <h1 class="sr-only">Музыкальный портал "Music Box"</h1>
 
-    <section>
-      <h2>Оформление подписки</h2>
-      <p>Онлайн музыка где угодно</p>
-      <p>Без ограничений</p>
-      <p>Получите доступ всего за несколько шагов. Заполните форму ниже и откройте мир музыки</p>
-      <form action="#" method="POST">
-        <div>
-          <label for="username">Имя пользователя</label>
-          <input id="username" name="username" type="text" placeholder="Аня" required>
-        </div>
-        <div>
-          <label for="usermail">Электронная почта</label>
-          <input id="usermail" name="usermail" type="email" placeholder="quick.example@mail.ru" required>
-        </div>
-        <button type="submit">Получить доступ</button>
-      </form>
+    <section class="page__section  banner-section">
+      <div class="container">
+        <h2 class="sr-only">Оформление подписки</h2>
+        <p class="heading  heading_size_large">Онлайн музыка где угодно</p>
+        <p class="heading">Без ограничений</p>
+        <p class="banner-section__text">Получите доступ всего за несколько шагов. Заполните форму ниже и откройте мир музыки</p>
+        <form class="subscription-form" action="#" method="POST">
+          <div class="subscription-form__wrapper">
+            <label class="sr-only" for="username">Имя пользователя</label>
+            <input class="subscription-form__input  generic-input" id="username" name="username" type="text" placeholder="Аня" required>
+          </div>
+          <div class="subscription-form__wrapper">
+            <label class="sr-only" for="usermail">Электронная почта</label>
+            <input class="subscription-form__input  generic-input" id="usermail" name="usermail" type="email" placeholder="quick.example@mail.ru" required>
+          </div>
+          <button class="subscription-form__button  button  button_bg_green" type="submit">Получить доступ</button>
+        </form>
+      </div>
     </section>
 
     <section>

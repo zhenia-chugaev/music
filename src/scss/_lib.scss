@@ -36,3 +36,12 @@ $base-indent: 8px;
   padding: 0;
   list-style: none;
 }
+
+@mixin bg-image($path, $fallback-color, $position: center, $size: cover, $repeat: no-repeat) {
+  background-color: $fallback-color;
+  background-image: url("#{$path}");
+  background-position: $position;
+  background-size: $size;
+  background-repeat: $repeat;
+  @content;
+}
