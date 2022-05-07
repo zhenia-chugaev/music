@@ -1,38 +1,3 @@
-@use "lib";
-
 /* ОСНОВНОЙ КОНТЕНТ */
 
-.page {
-  &__section {
-    padding-top: 100px;
-  }
-}
-
-.subscription-form {
-  max-width: 570px;
-  margin: 0 auto;
-
-  &__wrapper {
-    margin-bottom: lib.base-x(3);
-  }
-
-  &__input {
-    width: 100%;
-    min-width: 270px;
-  }
-
-  &__button {
-    width: 100%;
-  }
-}
-
-.banner-section {
-  padding: 250px 0 200px;
-  text-align: center;
-
-  @include lib.bg-image("../images/banner.jpg", lib.$base-dark);
-
-  &__text {
-    margin: lib.base-x(2) 0;
-  }
-}
+@use "parts/banner";
