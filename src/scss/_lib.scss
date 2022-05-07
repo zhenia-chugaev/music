@@ -10,6 +10,13 @@ $green: #34c176;
 $blue: #5328a1;
 $brown: #95390c;
 
+// Отступы.
+$base-indent: 8px;
+
+@function base-x($times) {
+  @return $base-indent * $times;
+}
+
 // Миксины.
 @mixin font-base($weight, $size, $interline, $style: normal) {
   font-weight: $weight;
@@ -22,4 +29,10 @@ $brown: #95390c;
 @mixin link-reset($color: inherit) {
   color: $color;
   text-decoration: none;
+}
+
+@mixin list-reset() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

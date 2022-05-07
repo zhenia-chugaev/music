@@ -1,1 +1,77 @@
-// Стили для шапки.
+@use "lib";
+@use "layout";
+
+/* ШАПКА */
+
+.logo {
+  @include layout.align-center;
+
+  &__image {
+    width: 24px;
+    height: 24px;
+    margin-right: lib.base-x(2);
+  }
+
+  &__app-name {
+    @include lib.font-base(700, 11px, 13px) {
+      color: lib.$base-light;
+      text-transform: uppercase;
+    }
+
+    cursor: default;
+    user-select: none;
+  }
+}
+
+.navigation {
+  &__list {
+    @include lib.list-reset;
+  }
+
+  &__link {
+    display: block;
+
+    @include lib.link-reset(lib.$gray-medium);
+
+    &_color_lightgray {
+      color: lib.$gray-light;
+    }
+
+    &_current {
+      color: lib.$gray-light;
+    }
+
+    &_style_small-uppercase {
+      @include lib.font-base(700, 11px, 1.5) {
+        text-transform: uppercase;
+      }
+    }
+
+    &:hover,
+    &:active {
+      color: lib.$base-light;
+    }
+  }
+}
+
+.search-form {
+  &__input {
+    width: 100%;
+  }
+}
+
+.header {
+  @at-root .page__header {
+    position: absolute;
+    top: 25px;
+    width: 100%;
+  }
+
+  &__logo {
+    margin-bottom: lib.base-x(2);
+  }
+
+  &__navigation {
+    margin-bottom: lib.base-x(2);
+  }
+}
