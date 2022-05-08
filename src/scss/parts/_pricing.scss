@@ -1,0 +1,88 @@
+@use "sass:list";
+@use "../lib/lib";
+@use "../lib/layout";
+
+.price-list {
+  @include lib.list-reset;
+
+  &__item {
+    max-width: 495px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card {
+  @include layout.align-center(column);
+
+  padding: {
+    top: lib.base-x(2);
+    right: lib.base-x(3);
+    bottom: lib.base-x(8);
+    left: lib.base-x(3);
+  }
+
+  border-radius: 16px;
+  text-align: center;
+
+  @include lib.bg-image(null, lib.$gray-dark);
+
+  &__name {
+    margin-bottom: 200px;
+  }
+
+  &__price {
+    margin-bottom: lib.base-x(5);
+
+    @include lib.font-base(400, 64px, 1) {
+      text-transform: uppercase;
+    }
+  }
+
+  &__currency {
+    font-size: 0.5em;
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  &__text {
+    order: 1;
+    margin: 0;
+    font-size: 0.8em;
+  }
+
+  &__link {
+    width: 100%;
+    margin-bottom: lib.base-x(8);
+    font-size: 16px;
+  }
+
+  $card-names: "free", "standard", "premium";
+
+  @each $name in $card-names {
+    $i: list.index($card-names, $name);
+
+    &_type_#{$name} {
+      background-image: url("../images/subscribe_#{$i}.jpg");
+    }
+  }
+}
+
+.pricing-section {
+  &__heading {
+    margin-bottom: lib.base-x(6);
+  }
+
+  &__list {
+    margin-bottom: lib.base-x(5);
+  }
+
+  &__text {
+    margin: 0;
+    text-align: center;
+  }
+}
