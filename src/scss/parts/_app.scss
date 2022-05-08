@@ -1,0 +1,23 @@
+@use "../lib/lib";
+
+.app-section {
+  &__content {
+    &::before {
+      display: block;
+      height: 278px;
+      margin-bottom: lib.base-x(2);
+
+      @include lib.bg-image("../images/iphone.png", lib.$base-dark, center, contain);
+
+      content: "";
+    }
+  }
+
+  &__text {
+    margin-bottom: lib.base-x(2);
+  }
+
+  &__link {
+    padding: lib.base-x(2) lib.base-x(5);
+  }
+}
