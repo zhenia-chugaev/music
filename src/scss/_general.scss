@@ -1,56 +1,6 @@
 @use "lib/lib";
 @use "lib/layout";
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  @include layout.sticky-footer;
-
-  @include lib.font-base(400, 16px, 1.5) {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-    color: lib.$base-light;
-  }
-
-  background-color: lib.$base-dark;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: none;
-  overflow: hidden;
-  font-size: 1px;
-  white-space: nowrap;
-  clip: rect(0, 0, 0, 0);
-}
-
-.page {
-  &__section {
-    padding-top: 100px;
-  }
-}
-
-.container {
-  width: 100%;
-  padding: 0 20px;
-}
-
 /* Заголовки */
 
 .heading {
@@ -213,4 +163,62 @@ img {
   &::placeholder {
     color: lib.$text-dark;
   }
+}
+
+/* ОБЩИЕ СТИЛИ ПРОЕКТА */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  @include layout.sticky-footer;
+
+  @include lib.font-base(400, 16px, 1.5) {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    color: lib.$base-light;
+  }
+
+  background-color: lib.$base-dark;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  font-size: 1px;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+.page-section {
+  padding-top: 100px;
+
+  &__heading {
+    margin-bottom: lib.base-x(6);
+
+    &_text_left {
+      text-align: left;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
 }
