@@ -1,6 +1,10 @@
 /* ОСНОВНОЙ КОНТЕНТ */
 
+/* INDEX.HTML */
 @use "parts/banner";
 @use "parts/pricing";
 @use "parts/news";
 @use "parts/app";
+
+/* ARTIST.HTML */
+@use "parts/artist";

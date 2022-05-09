@@ -1,0 +1,34 @@
+@use "../lib/lib";
+@use "../lib/layout";
+
+.menu {
+  @include lib.list-reset;
+
+  &__item {
+    margin-bottom: lib.base-x(3);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    @include layout.align-center;
+
+    width: 200px;
+  }
+}
+
+.artist-section {
+  padding: 225px 0;
+
+  @include lib.bg-image("../images/Morten Harket.jpg", lib.$gray-dark);
+
+  &__heading {
+    margin-bottom: lib.base-x(2);
+  }
+
+  &__subscribers {
+    margin-bottom: lib.base-x(6);
+  }
+}
