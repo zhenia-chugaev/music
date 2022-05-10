@@ -1,0 +1,86 @@
+@use "sass:math";
+@use "../lib/lib";
+@use "../lib/layout";
+
+.track-list {
+  @include lib.list-reset;
+
+  &__item {
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.track {
+  position: relative;
+
+  @include layout.align-center;
+
+  @include lib.font-base(400, 13px, 1.5) {
+    color: lib.$gray-medium;
+  }
+
+  $cover-size: 55px;
+  $button-size: 40px;
+
+  &__cover {
+    order: -1;
+    width: $cover-size;
+    height: $cover-size;
+    margin-right: 15px;
+  }
+
+  &__inner {
+    flex-grow: 1;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: math.div($cover-size - $button-size, 2);
+    z-index: 10;
+    display: none;
+    width: $button-size;
+    height: $button-size;
+    padding: 0;
+    border: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @include lib.bg-image(null, transparent, center, contain);
+
+    &_type_play {
+      background-image: url("../images/play-button.svg");
+    }
+
+    &_type_pause {
+      background-image: url("../images/pause-button.svg");
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &__progress-bar {
+    padding: 0 20px;
+  }
+
+  &__progress {
+    width: 0%;
+    height: 2px;
+    border-radius: 1px;
+    background-color: lib.$brown;
+  }
+
+  &:hover &__cover {
+    opacity: 0.6;
+  }
+
+  &:hover &__button {
+    display: block;
+  }
+}
