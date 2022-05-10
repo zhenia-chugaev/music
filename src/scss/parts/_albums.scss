@@ -1,0 +1,36 @@
+@use "../lib/lib";
+@use "../lib/layout";
+
+.albums-list {
+  @include layout.cols(auto-fit, minmax(185px, 1fr)) {
+    row-gap: 25px;
+  }
+
+  @include lib.list-reset;
+
+  &__item {
+    margin-right: 50px;
+  }
+}
+
+.album {
+  text-align: left;
+
+  &__link {
+    @include layout.align(start, column);
+    @include lib.link-reset;
+  }
+
+  &__title {
+    letter-spacing: -0.05px;
+  }
+
+  &__cover {
+    order: -1;
+    margin-bottom: 18px;
+  }
+
+  &__release-date {
+    color: lib.$gray-light;
+  }
+}

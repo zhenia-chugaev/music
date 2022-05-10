@@ -4,8 +4,52 @@
   height: 100%;
 }
 
+@mixin cols($count, $width, $gap: null) {
+  display: grid;
+  grid-template-columns: repeat($count, $width);
+  @content;
+
+  gap: $gap;
+}
+
+@mixin grid($template, $gap: null) {
+  display: grid;
+  grid-template-columns: $template;
+  @content;
+
+  gap: $gap;
+}
+
 @mixin align-center($dir: null) {
   display: flex;
   flex-direction: $dir;
   align-items: center;
+}
+
+@function prefix($value) {
+  @if $value == start or $value == end {
+    $value: flex-#{$value};
+  }
+
+  @if $value == between or $value == around or $value == evenly {
+    $value: space-#{$value};
+  }
+
+  @return $value;
+}
+
+@mixin align($place, $dir: null) {
+  $place: prefix($place);
+
+  display: flex;
+  flex-direction: $dir;
+  align-items: $place;
+}
+
+@mixin justify($place, $dir: null) {
+  $place: prefix($place);
+
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $place;
 }
