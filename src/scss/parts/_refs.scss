@@ -1,0 +1,32 @@
+@use "../lib/lib";
+@use "../lib/layout";
+
+.refs-list {
+  @include layout.cols(auto-fit, minmax(185px, 1fr)) {
+    row-gap: 25px;
+  }
+
+  @include lib.list-reset;
+
+  &__item {
+    margin-right: 50px;
+  }
+}
+
+.similar-artist {
+  text-align: center;
+
+  &__link {
+    @include layout.align-center(column);
+    @include lib.link-reset;
+  }
+
+  &__image {
+    order: -1;
+    margin-bottom: 18px;
+  }
+
+  &__subscribers {
+    color: lib.$gray-light;
+  }
+}
