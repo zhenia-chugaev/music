@@ -204,3 +204,22 @@ body {
   width: 100%;
   padding: 0 20px;
 }
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 38px;
+
+    &_size_large {
+      font-size: 60px;
+    }
+
+    &_size_small {
+      font-size: 30px;
+    }
+  }
+
+  .container {
+    max-width: lib.$content-width;
+    margin: 0 auto;
+  }
+}
