@@ -82,3 +82,31 @@
     text-align: center;
   }
 }
+
+@media (min-width: 768px) {
+  .price-list {
+    @include layout.justify(center);
+
+    flex-wrap: wrap;
+    gap: 50px;
+
+    &__item {
+      flex: 1 1 330px;
+      max-width: 370px;
+      margin: 0;
+    }
+  }
+
+  .card {
+    padding-top: lib.base-x(3);
+
+    &__name {
+      font-weight: 400;
+      font-size: 24px;
+    }
+
+    &__text {
+      letter-spacing: 0.06px;
+    }
+  }
+}
