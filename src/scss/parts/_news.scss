@@ -40,29 +40,24 @@
       bottom: lib.base-x(2);
     }
   }
+}
 
-  &__info {
-    @include layout.align-center;
+.news-info {
+  @include layout.align-center;
 
-    @include lib.font-base(400, 13px, 1.5) {
-      text-transform: uppercase;
-    }
-
-    & > * {
-      margin-right: lib.base-x(2);
-    }
-
-    & > :last-child {
-      margin-right: 0;
-    }
+  @include lib.font-base(400, 13px, 1.5) {
+    text-transform: uppercase;
   }
 
   &__avatar {
     width: 1.5em;
     height: 1.5em;
+    margin-right: lib.base-x(2);
   }
 
   &__publisher {
+    margin-right: lib.base-x(2);
+
     @include lib.link-reset(lib.$orange);
   }
 
