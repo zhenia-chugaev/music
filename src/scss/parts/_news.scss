@@ -65,3 +65,30 @@
     color: lib.$gray-medium;
   }
 }
+
+@media (min-width: 768px) {
+  .news-item {
+    @include layout.cols(2, 1fr) {
+      grid-template-rows: repeat(3, min-content) 1fr;
+      column-gap: 50px;
+    }
+
+    &__heading {
+      margin-bottom: 30px;
+    }
+
+    &__image {
+      grid-row: 1 / -1;
+      margin-bottom: 0;
+    }
+
+    &__link {
+      align-self: start;
+      justify-self: start;
+    }
+
+    &:nth-child(even) &__image {
+      grid-column: 2 / 3;
+    }
+  }
+}
