@@ -1,4 +1,5 @@
 @use "../lib/lib";
+@use "../lib/layout";
 
 .app-section {
   &__content {
@@ -19,5 +20,24 @@
 
   &__link {
     padding: lib.base-x(2) lib.base-x(5);
+  }
+}
+
+@media (min-width: 768px) {
+  .app-section {
+    &__content {
+      @include layout.cols(2, 1fr) {
+        column-gap: 50px;
+      }
+
+      &::before {
+        order: 1;
+        margin: 0;
+      }
+    }
+
+    &__wrapper {
+      padding-top: lib.base-x(2);
+    }
   }
 }
