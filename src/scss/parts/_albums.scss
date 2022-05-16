@@ -34,3 +34,9 @@
     color: lib.$gray-light;
   }
 }
+
+@media (min-width: 768px) {
+  .albums-list {
+    grid-template-columns: repeat(4, minmax(175px, 1fr));
+  }
+}
