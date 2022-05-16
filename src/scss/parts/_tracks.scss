@@ -84,3 +84,16 @@
     display: block;
   }
 }
+
+@media (min-width: 768px) {
+  .track-list {
+    @include layout.cols(2, 1fr) {
+      row-gap: 25px;
+    }
+
+    &__item {
+      margin: 0;
+      margin-right: 50px;
+    }
+  }
+}
