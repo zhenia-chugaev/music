@@ -1,5 +1,14 @@
 @use "sass:list";
 @use "lib/lib";
+@use "lib/layout";
+
+.footer-chapter {
+  &__heading {
+    margin-bottom: lib.base-x(2);
+    font-size: 18px;
+    text-align: left;
+  }
+}
 
 .links-list {
   @include lib.list-reset;
@@ -71,13 +80,6 @@
     margin-bottom: 30px;
   }
 
-  &-chapter {
-    &__heading {
-      margin-bottom: lib.base-x(2);
-      text-align: left;
-    }
-  }
-
   &__extra {
     margin-top: lib.base-x(6);
     padding: lib.base-x(4) 0;
@@ -89,6 +91,25 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    &__chapters-list {
+      @include layout.cols(4, 1fr) {
+        column-gap: 40px;
+      }
+    }
+
+    &__nav-item {
+      margin: 0;
+      margin-right: lib.base-x(1);
+
+      &:first-child a {
+        padding-left: 0;
+      }
     }
   }
 }
