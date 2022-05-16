@@ -126,6 +126,14 @@
   &_rounded {
     border-radius: 32px;
   }
+
+  &:hover {
+    opacity: 0.95;
+  }
+
+  &:active {
+    opacity: 0.85;
+  }
 }
 
 /* Поля ввода */
