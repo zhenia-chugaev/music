@@ -1,6 +1,6 @@
 @mixin sticky-footer() {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   height: 100%;
 }
 
