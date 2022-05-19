@@ -5,7 +5,7 @@
 
 Responsive layout (Mobile first)
 
-The web pages are available at:
-[musbox.surge.sh](https://musbox.surge.sh)
+The web pages are available at:  
+[musbox.surge.sh](https://musbox.surge.sh)  
 [musbox.surge.sh/artist](https://musbox.surge.sh/artist.html)
 
