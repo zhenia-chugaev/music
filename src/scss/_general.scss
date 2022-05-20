@@ -196,6 +196,10 @@ body {
   background-color: lib.$base-dark;
 }
 
+main:empty {
+  height: 200px;
+}
+
 .page-section {
   padding-top: 100px;
 
@@ -229,5 +233,9 @@ body {
   .container {
     max-width: lib.$content-width;
     margin: 0 auto;
+  }
+
+  main:empty {
+    height: auto;
   }
 }
