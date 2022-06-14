@@ -1,0 +1,21 @@
+name: custom-check
+
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check-out
+        uses: actions/checkout@v2
+
+      - name: project check
+        run: |
+          make install
+          make lint
+
